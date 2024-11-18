@@ -4,7 +4,9 @@ import { useState } from 'react';
 export default function TrafficLight() {
   const [walk, setWalk] = useState(true);
 
-  function handleClick() {
+  function handleClick(e) {
+    e.preventDefault();
+    alert(walk? "Parar es lo siguiente" : "Caminar es lo siguiente");
     setWalk(!walk);
   }
 
@@ -19,5 +21,6 @@ export default function TrafficLight() {
         {walk ? 'Caminar' : 'Parar'}
       </h1>
     </>
+    
   );
 }
